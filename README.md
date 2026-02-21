@@ -50,8 +50,7 @@ src/
 
 ## 🎨 Personalización
 
-### Agregar tu CV
-Colocá tu CV como `public/cv-sadi-rueda.pdf` para habilitar el botón de descarga.
+
 
 ### Agregar tus links sociales
 En `Navbar.tsx` y `Contact.tsx`, reemplazá los `href` de GitHub y LinkedIn con tus URLs reales.
@@ -62,26 +61,13 @@ El formulario actualmente simula el envío. Para conectarlo a un backend real, p
 - [Resend](https://resend.com/) — para emails transaccionales
 - API Route de Next.js (`src/app/api/contact/route.ts`)
 
-### ShadCN UI (optional)
+### ShadCN UI
 Para agregar componentes ShadCN adicionales:
 ```bash
 npx shadcn@latest init
 npx shadcn@latest add button card badge
 ```
 
-## 🌐 Deploy
-
-### Vercel (recomendado)
-```bash
-npm i -g vercel
-vercel
-```
-
-### Netlify
-```bash
-npm run build
-# Subir la carpeta .next
-```
 
 ## 🧰 Stack
 
@@ -94,4 +80,3 @@ npm run build
 
 ---
 
-Diseñado para destacar en el mercado tech 🚀
