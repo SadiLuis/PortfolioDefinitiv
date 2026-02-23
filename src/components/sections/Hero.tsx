@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-background"
+      className="relative min-h-[100svh] flex items-center overflow-x-hidden bg-background"
     >
       {/* Grid background */}
       <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-100 pointer-events-none" />
@@ -56,7 +56,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-24 pb-12 w-full">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 pt-20 sm:pt-24 pb-10 sm:pb-12 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div>
@@ -76,7 +76,7 @@ export default function Hero() {
 
             {/* Name */}
             <h1
-              className="font-display text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-2 opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]"
+              className="font-display text-[clamp(2.6rem,15vw,4.75rem)] md:text-7xl lg:text-8xl font-black leading-[0.9] sm:leading-none mb-2 opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]"
             >
               Sadi
               <br />
@@ -85,15 +85,15 @@ export default function Hero() {
             </h1>
 
             {/* Role typewriter */}
-            <div className="flex items-center gap-3 mt-4 mb-6 opacity-0 animate-fade-up [animation-delay:500ms] [animation-fill-mode:forwards]">
-              <span className="font-body text-xl text-foreground-dim">
+            <div className="flex items-center gap-2 sm:gap-3 mt-4 mb-6 min-h-[1.75rem] sm:min-h-[2rem] opacity-0 animate-fade-up [animation-delay:500ms] [animation-fill-mode:forwards]">
+              <span className="font-body text-base sm:text-xl leading-tight text-foreground-dim">
                 <span ref={roleRef} className="text-foreground font-medium" />
                 <span className="text-accent animate-pulse">|</span>
               </span>
             </div>
 
             {/* Description */}
-            <p className="font-body text-foreground-dim text-lg leading-relaxed max-w-lg mb-10 opacity-0 animate-fade-up [animation-delay:600ms] [animation-fill-mode:forwards]">
+            <p className="font-body text-foreground-dim text-base sm:text-lg leading-relaxed max-w-lg mb-8 sm:mb-10 opacity-0 animate-fade-up [animation-delay:600ms] [animation-fill-mode:forwards]">
               Construyo productos digitales con visión estratégica. Especializado
               en{" "}
               <span className="text-foreground font-medium">React.js</span>,{" "}
@@ -103,23 +103,23 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 opacity-0 animate-fade-up [animation-delay:700ms] [animation-fill-mode:forwards]">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 opacity-0 animate-fade-up [animation-delay:700ms] [animation-fill-mode:forwards]">
               <a
                 href="#projects"
-                className="bg-accent text-background font-mono font-medium px-6 py-3 text-sm tracking-wider hover:bg-accent-dim transition-colors duration-200 rounded-sm"
+                className="bg-accent text-background font-mono font-medium px-5 sm:px-6 py-2.5 sm:py-3 text-sm tracking-wider hover:bg-accent-dim transition-colors duration-200 rounded-sm"
               >
                 Ver proyectos
               </a>
               <a
                 href="#contact"
-                className="border border-[#1C2333] text-foreground-dim hover:text-foreground hover:border-foreground-dim font-mono text-sm px-6 py-3 transition-all duration-200 rounded-sm"
+                className="border border-[#1C2333] text-foreground-dim hover:text-foreground hover:border-foreground-dim font-mono text-sm px-5 sm:px-6 py-2.5 sm:py-3 transition-all duration-200 rounded-sm"
               >
                 Contactarme
               </a>
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-5 mt-10 opacity-0 animate-fade-up [animation-delay:800ms] [animation-fill-mode:forwards]">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:gap-5 mt-8 sm:mt-10 opacity-0 animate-fade-up [animation-delay:800ms] [animation-fill-mode:forwards]">
               {[
                 {
                   icon: Github,
@@ -148,8 +148,8 @@ export default function Hero() {
                   <Icon size={20} />
                 </a>
               ))}
-              <div className="h-px w-16 bg-[#1C2333]" />
-              <span className="font-mono text-xs text-muted">
+              <div className="h-px w-10 sm:w-16 bg-[#1C2333]" />
+              <span className="font-mono text-[11px] sm:text-xs text-muted break-all">
                 sadiluisrueda.94@gmail.com
               </span>
             </div>
@@ -245,7 +245,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted animate-bounce">
+        <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-muted animate-bounce">
           <span className="font-mono text-xs tracking-widest">SCROLL</span>
           <ArrowDown size={14} />
         </div>
@@ -253,3 +253,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -6,20 +6,20 @@ const categories = [
     label: "Web",
     color: "from-blue-500 to-cyan-400",
     skills: [
-      { name: "React.js", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "TypeScript", level: 85 },
-      { name: "Node.js / Express", level: 80 },
-      { name: "Tailwind CSS", level: 92 },
+      { name: "React.js" },
+      { name: "Next.js" },
+      { name: "TypeScript"},
+      { name: "Node.js / Express" },
+      { name: "Tailwind CSS" },
     ],
   },
   {
     label: "Mobile",
     color: "from-accent to-orange-400",
     skills: [
-      { name: "React Native", level: 88 },
-      { name: "Native Integrations", level: 80 },
-      { name: "Redux", level: 82 },
+      { name: "React Native" },
+      { name: "Native Integrations" },
+      { name: "Redux" },
     ],
   },
   // {
@@ -35,9 +35,9 @@ const categories = [
     label: "Product",
     color: "from-green-500 to-emerald-400",
     skills: [
-      { name: "Product Strategy", level: 80 },
-      { name: "UX/UI Mindset", level: 85 },
-      { name: "Metrics Analysis", level: 75 },
+      { name: "Product Strategy" },
+      { name: "UX/UI Mindset" },
+      { name: "Metrics Analysis" },
     ],
   },
 ];
@@ -85,18 +85,18 @@ export default function Skills() {
                 </h3>
               </div>
               <div className="space-y-4">
-                {skills.map(({ name, level }) => (
+                {skills.map(({ name }) => (
                   <div key={name}>
                     <div className="flex justify-between mb-1.5">
                       <span className="font-body text-sm text-foreground">{name}</span>
-                      <span className="font-mono text-xs text-muted">{level}%</span>
+                      {/* <span className="font-mono text-xs text-muted">{level}%</span> */}
                     </div>
-                    <div className="h-1.5 bg-[#1C2333] rounded-full overflow-hidden">
+                    {/* <div className="h-1.5 bg-[#1C2333] rounded-full overflow-hidden">
                       <div
                         className={`h-full bg-gradient-to-r ${color} rounded-full transition-all duration-1000 ease-out`}
                         style={{ width: `${level}%` }}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>

@@ -3,6 +3,8 @@ import { useReveal } from "@/hooks/useReveal";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 
+const CONTACT_EMAIL = "sadiluisrueda.94@gmail.com";
+
 export default function Contact() {
   const { ref } = useReveal();
   const [submitted, setSubmitted] = useState(false);
@@ -10,8 +12,18 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, connect to a form backend (e.g., Formspree, Resend)
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+
+    const subject = encodeURIComponent(`Nuevo mensaje de ${name}`);
+    const body = encodeURIComponent(
+      `Hola Sadi,\n\nMi nombre es ${name}.\nMi email es ${email}.\n\n${message}`,
+    );
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
     setSubmitted(true);
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
@@ -43,8 +55,8 @@ export default function Contact() {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "sadiluisrueda.94@gmail.com",
-                  href: "mailto:sadiluisrueda.94@gmail.com",
+                  value: CONTACT_EMAIL,
+                  href: `mailto:${CONTACT_EMAIL}`,
                 },
                 {
                   icon: Phone,
@@ -114,9 +126,9 @@ export default function Contact() {
                 <div className="w-16 h-16 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mx-auto mb-4">
                   <Send size={24} className="text-accent" />
                 </div>
-                <h3 className="font-display text-2xl font-bold mb-2">¡Mensaje enviado!</h3>
+                <h3 className="font-display text-2xl font-bold mb-2">Correo listo</h3>
                 <p className="text-foreground-dim">
-                  Te responderé a la brevedad. ¡Gracias por escribirme!
+                  Se abrió tu cliente de correo con el mensaje prellenado.
                 </p>
               </div>
             ) : (
@@ -169,6 +181,9 @@ export default function Contact() {
                   <Send size={16} />
                   Enviar mensaje
                 </button>
+                <p className="font-body text-xs text-muted">
+                  Este formulario abre tu app de correo usando mailto.
+                </p>
               </form>
             )}
           </div>
