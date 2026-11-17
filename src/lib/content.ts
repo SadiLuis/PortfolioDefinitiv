@@ -28,6 +28,9 @@ export type CaseStudy = {
   metrics: { value: string; label: string }[];
   stack: string[];
   cover: string;
+  /** Capturas reales en /public/projects. La primera se usa como portada. */
+  images: { src: string; alt: string; caption: string; width: number; height: number }[];
+  links: { label: string; href: string }[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -57,6 +60,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["React Native", "TypeScript", "Redux", "AWS S3", "Google Maps API", "Git"],
     cover: "mvp",
+    images: [
+      { src: "/projects/knauf.jpg", alt: "Sitio web de Knauf Argentina", caption: "Knauf Argentina, el cliente. La app es de uso interno, por eso no hay capturas públicas de la app en sí.", width: 1568, height: 782 },
+    ],
+    links: [{ label: "Knauf Argentina", href: "https://knauf.com/es-AR" }],
   },
   {
     slug: "firma-electronica",
@@ -82,6 +89,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["React.js", "Node.js", "Express.js", "Tailwind CSS", "REST APIs"],
     cover: "systems",
+    images: [
+      { src: "/projects/cardcred-firma.png", alt: "Página de Firma Electrónica en el sitio de CardCred", caption: "Firma Electrónica, el producto publicado en el sitio de CardCred.", width: 1440, height: 900 },
+    ],
+    links: [{ label: "Ver Firma Electrónica", href: "https://www.cardcred.com.ar/firmaElectronica" }],
   },
   {
     slug: "paycard",
@@ -95,21 +106,58 @@ export const caseStudies: CaseStudy[] = [
     approach: [
       "Colaboré en la migración y optimización del sistema de cobranzas.",
       "Mejoré la gestión de pagos, el historial de transacciones y las métricas de desempeño por rol.",
-      "Además, refactoricé la landing principal de la empresa para mejorar velocidad y fluidez.",
+      "Acompañé la transición de los equipos para que siguieran operando durante la migración.",
     ],
     decisions: [
       "Diferenciar vistas y métricas según el rol de cada área.",
       "Optimizar los flujos más usados antes que sumar funcionalidades.",
       "Migrar de forma incremental para no interrumpir la operación.",
     ],
-    outcome: "El flujo de trabajo de los equipos que usan PayCard se volvió un 30% más eficiente, y la landing ganó un 20% en velocidad de carga.",
+    outcome: "El flujo de trabajo de los equipos que usan PayCard se volvió un 30% más eficiente.",
     metrics: [
       { value: "+30%", label: "eficiencia en el flujo de trabajo" },
       { value: "25", label: "usuarios en 5 áreas" },
-      { value: "+20%", label: "velocidad de la landing" },
     ],
     stack: ["React.js", "Node.js", "Express.js", "Tailwind CSS", "Git"],
     cover: "interface",
+    images: [
+      { src: "/projects/paycard.png", alt: "Pantalla de ingreso de PayCard CardCred", caption: "Acceso a PayCard. El resto del sistema es privado y requiere credenciales de empresa.", width: 1440, height: 900 },
+    ],
+    links: [{ label: "Ver PayCard", href: "https://paycard.cardcred.com.ar/" }],
+  },
+  {
+    slug: "cardcred-landing",
+    title: "Un sitio más rápido para vender servicios financieros",
+    eyebrow: "CARDCRED / Sitio web",
+    summary: "Refactor de la landing principal de CardCred y sus páginas de producto, como Firma Electrónica y Link de Pago.",
+    role: "Programador Full Stack",
+    period: "Jul 2024 — Ago 2025",
+    context: "El sitio de CardCred es la puerta de entrada para financieras que buscan débitos recurrentes, firma electrónica y cobros por link de pago.",
+    problem: "Un sitio lento y pesado pierde clientes antes de que lleguen a leer la propuesta, y cada producto necesitaba su propia página clara.",
+    approach: [
+      "Refactoricé el sitio principal para mejorar la velocidad de carga y la fluidez.",
+      "Trabajé las páginas de producto, como Firma Electrónica y Link de Pago, con una estructura común.",
+      "Mantuve una navegación simple entre servicios, preguntas frecuentes y acceso a clientes.",
+    ],
+    decisions: [
+      "Medir la velocidad antes y después para tener una mejora real, no percibida.",
+      "Reutilizar componentes entre páginas de producto para mantener consistencia.",
+      "Priorizar el mensaje principal de cada servicio por encima de la decoración.",
+    ],
+    outcome: "El sitio mejoró un 20% su velocidad de carga y fluidez.",
+    metrics: [
+      { value: "+20%", label: "velocidad de carga" },
+    ],
+    stack: ["React.js", "Tailwind CSS", "JavaScript", "Git"],
+    cover: "mvp",
+    images: [
+      { src: "/projects/cardcred-landing.png", alt: "Página principal de CardCred", caption: "Home de CardCred: débitos recurrentes para financieras.", width: 1440, height: 900 },
+      { src: "/projects/cardcred-linkdepago.png", alt: "Página de Link de Pago de CardCred", caption: "Link de Pago: cobros por WhatsApp, SMS o correo electrónico.", width: 1440, height: 900 },
+    ],
+    links: [
+      { label: "Ver cardcred.com.ar", href: "https://www.cardcred.com.ar/" },
+      { label: "Ver Link de Pago", href: "https://www.cardcred.com.ar/linkDePago" },
+    ],
   },
 ];
 
@@ -134,7 +182,7 @@ export const experience: Experience[] = [
     company: "CARDCRED",
     role: "Programador Full Stack",
     mode: "Jornada completa · Híbrido",
-    summary: "Firma electrónica desde cero, migración del sistema de cobranzas PayCard (+30% de eficiencia) y refactor de la landing (+20% de velocidad).",
+    summary: "Firma electrónica desde cero, migración del sistema de cobranzas PayCard (+30% de eficiencia) y refactor del sitio web (+20% de velocidad).",
   },
 ];
 

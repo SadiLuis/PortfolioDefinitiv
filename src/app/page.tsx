@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { CaseCard } from "@/components/case-card";
 import { MagneticMark, Reveal } from "@/components/motion";
+import { CopyEmail } from "@/components/copy-email";
 import { caseStudies, experience, profile } from "@/lib/content";
 
 const impact = [
@@ -17,15 +18,12 @@ export default function Home() {
       <Nav />
       <section className="hero">
         <div className="container hero-content">
-          <span className="kicker">
-            <span className="status-dot" aria-hidden="true" />
-            {profile.role} · Buenos Aires
-          </span>
+          <span className="kicker">{profile.role} · Buenos Aires</span>
           <h1>
-            Software en producción, <em>no en tutoriales.</em>
+            Mi código firma, cobra <em>y cruza fronteras.</em>
           </h1>
           <p className="hero-sub">
-            Soy {profile.shortName}. Construyo productos reales para fintech y logística con React, Next.js, TypeScript, Node.js y React Native.
+            Soy {profile.shortName}. Construí la firma electrónica y el sistema de cobranzas de una fintech, y una app que sigue containers entre Argentina y Colombia. Hoy busco el próximo producto que valga la pena llevar a producción.
           </p>
           <div className="hero-footer">
             <div className="hero-meta">
@@ -39,9 +37,9 @@ export default function Home() {
                 <strong>Ahora</strong>Abierto a oportunidades
               </div>
             </div>
-            <a className="circle-cta" href={`mailto:${profile.email}`}>
+            <a className="circle-cta" href="#contact">
               Hablemos
-              <br />↗
+              <br />↓
             </a>
           </div>
         </div>
@@ -70,7 +68,7 @@ export default function Home() {
               <em>reales.</em>
             </h2>
             <p className="section-note">
-              Tres productos en producción: logística internacional, identidad digital y cobranzas en una fintech.
+              Cuatro productos en producción: logística internacional, identidad digital, cobranzas y el sitio de una fintech.
             </p>
           </div>
           <div className="cases">
@@ -167,8 +165,9 @@ export default function Home() {
           <div className="contact-bottom">
             <p>{profile.availability}</p>
             <div className="contact-links">
+              <CopyEmail email={profile.email} />
               <a className="contact-link" href={`mailto:${profile.email}`}>
-                {profile.email} ↗
+                Abrir en mi correo ↗
               </a>
               <a className="contact-link" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn ↗

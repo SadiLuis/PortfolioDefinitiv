@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Reveal } from "@/components/motion";
+import { CopyEmail } from "@/components/copy-email";
 import { education, experience, languages, profile, skills } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -114,7 +115,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="contact">
+      <section className="contact" id="contact">
         <div className="container">
           <span className="kicker">Próximo capítulo</span>
           <h2>
@@ -125,8 +126,9 @@ export default function About() {
           <div className="contact-bottom">
             <p>{profile.availability}</p>
             <div className="contact-links">
+              <CopyEmail email={profile.email} />
               <a className="contact-link" href={`mailto:${profile.email}`}>
-                Escribime ↗
+                Abrir en mi correo ↗
               </a>
               <a className="contact-link" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn ↗
