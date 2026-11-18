@@ -9,7 +9,10 @@ const impact = [
   { value: "+30%", label: "eficiencia en el sistema de cobranzas de CARDCRED" },
   { value: "+20%", label: "velocidad de carga de la landing principal" },
   { value: "2", label: "países usando la app de logística de Knauf" },
-  { value: "0 → 1", label: "sistema de firma electrónica construido desde cero" },
+  {
+    value: "0 → 1",
+    label: "sistema de firma electrónica construido desde cero",
+  },
 ];
 
 export default function Home() {
@@ -18,13 +21,20 @@ export default function Home() {
       <Nav />
       <section className="hero">
         <div className="container hero-content">
-          <span className="kicker">{profile.role} · Buenos Aires</span>
+          <span className="kicker">{profile.shortName} · {profile.role}</span>
           <h1>
-            Mi código firma, cobra <em>y cruza fronteras.</em>
+            Desarrollo aplicaciones <em>web y móviles.</em>
           </h1>
           <p className="hero-sub">
-            Soy {profile.shortName}. Construí la firma electrónica y el sistema de cobranzas de una fintech, y una app que sigue containers entre Argentina y Colombia. Hoy busco el próximo producto que valga la pena llevar a producción.
+            Trabajo con React, Next.js y React Native. Participé en proyectos de
+            fintech y logística, desarrollando funcionalidades y mejorando sistemas
+            existentes. Me gusta entender qué necesita resolver el equipo y
+            participar en las decisiones, además de escribir el código.
           </p>
+          <div className="hero-actions">
+            <a className="text-link" href="#work">Ver proyectos <span aria-hidden="true">↓</span></a>
+            <a className="text-link" href="#contact">Hablemos <span aria-hidden="true">↗</span></a>
+          </div>
           <div className="hero-footer">
             <div className="hero-meta">
               <div>
@@ -34,7 +44,8 @@ export default function Home() {
                 <strong>Mobile</strong>React Native
               </div>
               <div>
-                <strong>Ahora</strong>Abierto a oportunidades
+                <strong>Ahora</strong>Busco sumarme a un equipo como
+                <br />Frontend o Full Stack Developer.
               </div>
             </div>
             <a className="circle-cta" href="#contact">
@@ -65,10 +76,10 @@ export default function Home() {
             <h2>
               Proyectos
               <br />
-              <em>reales.</em>
+              <em>en los que trabajé.</em>
             </h2>
             <p className="section-note">
-              Cuatro productos en producción: logística internacional, identidad digital, cobranzas y el sitio de una fintech.
+              Qué necesitaba cada proyecto, qué desarrollé y cómo se usa hoy.
             </p>
           </div>
           <div className="cases">
@@ -82,11 +93,11 @@ export default function Home() {
       <section className="section section-dark">
         <div className="container thinking">
           <Reveal>
-            <span className="eyebrow">Qué aporto</span>
+            <span className="eyebrow">Mi forma de trabajar</span>
             <h2>
-              Entiendo el
+              Cómo encaro
               <br />
-              <em>negocio.</em>
+              <em>cada proyecto.</em>
             </h2>
           </Reveal>
           <div className="principles">
@@ -94,8 +105,12 @@ export default function Home() {
               <div className="principle">
                 <b>01</b>
                 <div>
-                  <h3>Seguridad primero</h3>
-                  <p>En fintech y en apps con roles, la seguridad no es un extra: es parte del diseño desde el primer día.</p>
+                  <h3>Definir los accesos</h3>
+                  <p>
+                    En los proyectos de fintech y logística trabajé con distintos
+                    roles. Definir qué puede ver y hacer cada persona es parte
+                    de la planificación de cada funcionalidad.
+                  </p>
                 </div>
               </div>
             </Reveal>
@@ -103,8 +118,12 @@ export default function Home() {
               <div className="principle">
                 <b>02</b>
                 <div>
-                  <h3>UX sin fricción</h3>
-                  <p>Cada paso de más en un onboarding o en una carga en campo cuesta usuarios y tiempo. Busco el flujo más corto que funcione.</p>
+                  <h3>Facilitar las tareas de todos los días</h3>
+                  <p>
+                    Me interesa cómo se usa una pantalla: qué datos hay que
+                    cargar, qué pasos se repiten y dónde aparecen dudas.
+                    A partir de eso, busco simplificarla.
+                  </p>
                 </div>
               </div>
             </Reveal>
@@ -113,7 +132,11 @@ export default function Home() {
                 <b>03</b>
                 <div>
                   <h3>Mejorar lo que existe</h3>
-                  <p>Me siento cómodo tomando un producto existente para migrarlo, optimizarlo y hacerlo más rápido, sin frenar la operación.</p>
+                  <p>
+                    También trabajé en sistemas que ya estaban en uso.
+                    Antes de cambiar algo, reviso cómo funciona y qué otras
+                    partes dependen de eso para organizar las mejoras.
+                  </p>
                 </div>
               </div>
             </Reveal>
@@ -126,9 +149,9 @@ export default function Home() {
           <Reveal>
             <span className="eyebrow">Experiencia</span>
             <h2>
-              Dónde lo
+              Dónde
               <br />
-              <em>apliqué.</em>
+              <em>trabajé.</em>
             </h2>
           </Reveal>
           <div className="timeline">
@@ -169,10 +192,20 @@ export default function Home() {
               <a className="contact-link" href={`mailto:${profile.email}`}>
                 Abrir en mi correo ↗
               </a>
-              <a className="contact-link" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+              <a
+                className="contact-link"
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 LinkedIn ↗
               </a>
-              <a className="contact-link" href={profile.github} target="_blank" rel="noopener noreferrer">
+              <a
+                className="contact-link"
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub ↗
               </a>
             </div>
